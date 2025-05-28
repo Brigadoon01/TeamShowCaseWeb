@@ -1,8 +1,26 @@
 # Team Showcase Component
 
+![Team Showcase Preview](https://via.placeholder.com/800x400/f3f4f6/374151?text=Team+Showcase+Component)
+
 A responsive, feature-rich team showcase component built with React, Next.js, and Tailwind CSS. Perfect for displaying team members with search and pagination capabilities.
 
-![Team Showcase Preview](https://via.placeholder.com/800x400/f3f4f6/374151?text=Team+Showcase+Component)
+## Table of Contents
+
+- [Features](#features)
+- [Quick Start](#quick-start)
+- [Project Structure](#project-structure)
+- [Usage](#usage)
+- [Data Structure](#data-structure)
+- [Customization](#customization)
+- [Deployment](#deployment)
+- [Docker Setup](#docker-setup)
+- [Testing](#testing)
+- [Troubleshooting](#troubleshooting)
+- [Performance Optimization](#performance-optimization)
+- [Contributing](#contributing)
+- [License](#license)
+- [Acknowledgments](#acknowledgments)
+- [Support](#support)
 
 ## Features
 
@@ -18,51 +36,50 @@ A responsive, feature-rich team showcase component built with React, Next.js, an
 
 ## Quick Start
 
-
-###  Setup
+### Setup
 
 #### Prerequisites
 
-- Node.js 18+ 
+- Node.js 18+
 - npm, yarn, or pnpm
 
 #### Installation Steps
 
 1. **Create a new Next.js project**
-   \`\`\`bash
-   npx create-next-app@latest team-showcase --typescript --tailwind --eslint --app --src-dir --import-alias "@/*"
-   cd team-showcase
-   \`\`\`
+```bash
+npx create-next-app@latest team-showcase --typescript --tailwind --eslint --app --src-dir --import-alias "@/*"
+cd team-showcase
+```
 
 2. **Initialize shadcn/ui**
-   \`\`\`bash
-   npx shadcn@latest init
-   \`\`\`
+```bash
+npx shadcn@latest init
+```
 
 3. **Install required components**
-   \`\`\`bash
-   npx shadcn@latest add card button select badge input
-   \`\`\`
+```bash
+npx shadcn@latest add card button select badge input
+```
 
 4. **Install additional dependencies**
-   \`\`\`bash
-   npm install lucide-react
-   \`\`\`
+```bash
+npm install lucide-react
+```
 
 5. **Add the project files**
-   - Copy the component files from this project
-   - Ensure the file structure matches the project layout
+- Copy the component files from this project
+- Ensure the file structure matches the project layout
 
 6. **Run the development server**
-   \`\`\`bash
-   npm run dev
-   \`\`\`
+```bash
+npm run dev
+```
 
-Visit \`http://localhost:3000\` to see your Team Showcase!
+Visit `http://localhost:3000` to see your Team Showcase!
 
 ## Project Structure
 
-\`\`\`
+```
 team-showcase/
 ├── src/
 │   ├── data/
@@ -83,13 +100,13 @@ team-showcase/
 │       └── utils.ts                  # Utility functions
 ├── public/ # Public assets
 └── ... other project files (tailwind.config.ts, package.json, etc.)
-\`\`\`
+```
 
 ## Usage
 
 ### Basic Usage
 
-\`\`\`tsx
+```tsx
 import TeamShowcase from '@/components/team-showcase'
 
 export default function Page() {
@@ -99,19 +116,19 @@ export default function Page() {
     </main>
   )
 }
-\`\`\`
+```
 
 ### Props
 
 | Prop | Type | Default | Description |
 |------|------|---------|-------------|
-| \`itemsPerPage\` | \`number\` | \`6\` | Number of team members to display per page |
+| `itemsPerPage` | `number` | `6` | Number of team members to display per page |
 
 ## Data Structure
 
-Team member data is stored in \`src/data/team-data.json\`. Each team member object should follow this structure:
+Team member data is stored in `src/data/team-data.json`. Each team member object should follow this structure:
 
-\`\`\`json
+```json
 {
   "id": number,
   "name": string,
@@ -127,50 +144,50 @@ Team member data is stored in \`src/data/team-data.json\`. Each team member obje
   },
   "skills": string[] // Optional
 }
-\`\`\`
+```
 
 ### Required Fields
 
-- \`id\`: Unique identifier (number)
-- \`name\`: Full name (string)
-- \`jobTitle\`: Job position (string)
-- \`photo\`: Image URL or path (string)
+- `id`: Unique identifier (number)
+- `name`: Full name (string)
+- `jobTitle`: Job position (string)
+- `photo`: Image URL or path (string)
 
 ### Optional Fields
 
-- \`department\`: Department name (string). Note: The component currently does not filter by department.
-- \`bio\`: A short biography (string).
-- \`email\`: Email address (string).
-- \`phone\`: Phone number (string).
-- \`socialLinks\`: Object containing social media URLs.
-  - \`linkedin\`: LinkedIn profile URL (string).
-  - \`twitter\`: Twitter profile URL (string).
-- \`skills\`: An array of strings representing skills.
+- `department`: Department name (string). Note: The component currently does not filter by department.
+- `bio`: A short biography (string).
+- `email`: Email address (string).
+- `phone`: Phone number (string).
+- `socialLinks`: Object containing social media URLs.
+  - `linkedin`: LinkedIn profile URL (string).
+  - `twitter`: Twitter profile URL (string).
+- `skills`: An array of strings representing skills.
 
 ## Customization
 
 ### Adding Team Members
 
-Edit \`src/data/team-data.json\` and add new entries following the data structure described above.
+Edit `src/data/team-data.json` and add new entries following the data structure described above.
 
 ### Changing Items Per Page
 
-\`\`\`tsx
+```tsx
 <TeamShowcase itemsPerPage={9} />
-\`\`\`
+```
 
 ### Styling Customization
 
 The component uses Tailwind CSS classes. Key areas for customization:
 
-- **Card hover effects**: Modify \`hover:scale-105 hover:shadow-lg\`
+- **Card hover effects**: Modify `hover:scale-105 hover:shadow-lg`
 - **Color scheme**: Update badge variants and text colors
 - **Spacing**: Adjust padding and margin classes
 - **Animations**: Customize transition durations
 
 ### Adding New Departments
 
-While the component doesn't currently filter by department, you can still include the \`department\` field in \`src/data/team-data.json\` for organizational purposes or future development.
+While the component doesn't currently filter by department, you can still include the `department` field in `src/data/team-data.json` for organizational purposes or future development.
 
 ## Deployment
 
@@ -189,9 +206,9 @@ While the component doesn't currently filter by department, you can still includ
 
 ## Docker Setup
 
-Create a \`Dockerfile\`:
+Create a `Dockerfile`:
 
-\`\`\`dockerfile
+```dockerfile
 FROM node:18-alpine
 
 WORKDIR /app
@@ -205,26 +222,26 @@ RUN npm run build
 EXPOSE 3000
 
 CMD ["npm", "start"]
-\`\`\`
+```
 
 Build and run:
 
-\`\`\`bash
+```bash
 docker build -t team-showcase .
 docker run -p 3000:3000 team-showcase
-\`\`\`
+```
 
-##  Testing
+## Testing
 
 ### Setup Testing (Optional)
 
-\`\`\`bash
+```bash
 npm install --save-dev jest @testing-library/react @testing-library/jest-dom
-\`\`\`
+```
 
 ### Example Test
 
-\`\`\`tsx
+```tsx
 import { render, screen } from '@testing-library/react'
 import TeamShowcase from '@/components/team-showcase'
 
@@ -232,35 +249,35 @@ test('renders team showcase header', () => {
   render(<TeamShowcase />)
   expect(screen.getByText('Meet Our Team')).toBeInTheDocument()
 })
-\`\`\`
+```
 
-##  Troubleshooting
+## Troubleshooting
 
 ### Common Issues
 
 **Import errors with JSON file**
-- Ensure \`src/data/team-data.json\` is in the correct location.
-- Check that the import path in \`src/components/team-showcase.tsx\` is correct (\`.././data/team-data.json\`).
+- Ensure `src/data/team-data.json` is in the correct location.
+- Check that the import path in `src/components/team-showcase.tsx` is correct (`.././data/team-data.json`).
 - Verify the JSON syntax is valid.
 
-**Invalid \`src\` prop on \`next/image\`**
-- Ensure the hostname for external images (e.g., \`images.unsplash.com\`) is configured in \`next.config.js\` under the \`images.domains\` array.
+**Invalid `src` prop on `next/image`**
+- Ensure the hostname for external images (e.g., `images.unsplash.com`) is configured in `next.config.js` under the `images.domains` array.
 
 ## Performance Optimization
 
 The component includes several performance optimizations:
 
-- **Lazy Loading**: Component is loaded dynamically using Next.js \`dynamic\`
+- **Lazy Loading**: Component is loaded dynamically using Next.js `dynamic`
 - **Pagination**: Limits DOM elements by showing only current page items
-- **Optimized Images**: Uses Next.js \`Image\` component for automatic optimization
+- **Optimized Images**: Uses Next.js `Image` component for automatic optimization
 - **Efficient Filtering**: Uses React state for client-side filtering
 
 ## Contributing
 
 1. Fork the repository
-2. Create a feature branch: \`git checkout -b feature-name\`
-3. Commit changes: \`git commit -am 'Add feature'\`
-4. Push to branch: \`git push origin feature-name\`
+2. Create a feature branch: `git checkout -b feature-name`
+3. Commit changes: `git commit -am 'Add feature'`
+4. Push to branch: `git push origin feature-name`
 5. Submit a pull request
 
 ## License
@@ -284,5 +301,3 @@ If you encounter any issues or have questions:
 
 ---
 
-
-\`\`\`
